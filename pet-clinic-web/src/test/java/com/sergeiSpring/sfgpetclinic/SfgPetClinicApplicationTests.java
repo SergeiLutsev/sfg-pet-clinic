@@ -1,4 +1,4 @@
-package com.sergeispring.sfgpetclinic;
+package com.sergeiSpring.sfgpetclinic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
