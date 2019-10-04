@@ -1,4 +1,4 @@
-package com.sergeiSpring.sfgpetclinic;
+package com.sergei.petclinic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SfgPetClinicApplicationTests {
+public class PetClinicApplicationTests {
 
     @Test
     public void contextLoads() {
