@@ -22,6 +22,7 @@ public abstract class AbstractServiceMap<T extends BaseModel, ID extends Long> {
                 object.setId(getNextId());
             }
             map.put(object.getId(), object);
+
         }else {
             throw new RuntimeException("Object can't be null");
         }
@@ -29,7 +30,6 @@ public abstract class AbstractServiceMap<T extends BaseModel, ID extends Long> {
 
         return object;
     }
-
     protected void deleteById(ID id) {
         map.remove(id);
     }
