@@ -3,6 +3,7 @@ package com.sergei.petclinic.models;
 import java.time.LocalDate;
 
 public class Pet extends BaseModel {
+    private String name;
     private Owner owner;
     private PetType petType;
     private LocalDate birthDate;
@@ -29,5 +30,13 @@ public class Pet extends BaseModel {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
