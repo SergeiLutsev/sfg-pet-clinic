@@ -1,10 +1,7 @@
 package com.sergei.petclinic.bootstrap;
 
 import com.sergei.petclinic.models.*;
-import com.sergei.petclinic.services.OwnerService;
-import com.sergei.petclinic.services.PetTypeService;
-import com.sergei.petclinic.services.SpecialityService;
-import com.sergei.petclinic.services.VetService;
+import com.sergei.petclinic.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -17,13 +14,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     @Autowired
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -84,6 +83,13 @@ public class DataLoader implements CommandLineRunner {
         serPet.setBirthDate(LocalDate.now());
         owner.getPets().add(serPet);
         ownerService.save(owner);
+
+        Visit visitSerPet=new Visit();
+        visitSerPet.setPet(serPet);
+        visitSerPet.setDate(LocalDate.now());
+        visitSerPet.setDescription("Sneezzzy cat");
+        visitService.save(visitSerPet);
+
 //-------------------------------------------------------------------------
         Owner owner2=new Owner();
         owner2.setFirstName("Vadim");
@@ -99,6 +105,12 @@ public class DataLoader implements CommandLineRunner {
         vadimPet.setBirthDate(LocalDate.now());
         owner2.getPets().add(vadimPet);
         ownerService.save(owner2);
+
+        Visit visitVadimPet=new Visit();
+        visitVadimPet.setPet(vadimPet);
+        visitVadimPet.setDate(LocalDate.now());
+        visitVadimPet.setDescription("Hiperactive dog");
+        visitService.save(visitVadimPet);
 
         System.out.println("Owners was loaded....");
     }
