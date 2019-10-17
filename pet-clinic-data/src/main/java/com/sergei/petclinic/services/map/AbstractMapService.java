@@ -4,7 +4,7 @@ import com.sergei.petclinic.models.BaseModel;
 
 import java.util.*;
 
-public abstract class AbstractServiceMap<T extends BaseModel, ID extends Long> {
+public abstract class AbstractMapService<T extends BaseModel, ID extends Long> {
 
     protected Map<Long, T> map = new HashMap<>();
 
