@@ -1,7 +1,7 @@
 package com.sergei.petclinic.services.springdatajpa;
 
 import com.sergei.petclinic.models.Visit;
-import com.sergei.petclinic.models.VisitRepository;
+import com.sergei.petclinic.repisitories.VisitRepository;
 import com.sergei.petclinic.services.VisitService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
