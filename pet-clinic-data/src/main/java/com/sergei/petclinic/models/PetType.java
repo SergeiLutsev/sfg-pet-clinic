@@ -13,4 +13,9 @@ import javax.persistence.Table;
 @Table(name = "types")
 public class PetType extends BaseModel {
     private String name;
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
