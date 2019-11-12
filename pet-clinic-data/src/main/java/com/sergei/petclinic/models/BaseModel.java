@@ -16,4 +16,14 @@ public class BaseModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public BaseModel(Long id) {
+        this.id=id;
+    }
+
+    public BaseModel() {
+    }
+
+    public boolean isNew(){
+        return this.id==null;
+    }
 }
