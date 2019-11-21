@@ -24,6 +24,7 @@ public class VisitController {
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder){
+
         dataBinder.setDisallowedFields("id");
     }
 
